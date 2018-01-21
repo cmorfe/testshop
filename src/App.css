@@ -1,5 +1,17 @@
+body {
+    color: #40718d;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li > p {
+    margin: 0;
+}
+
 .App {
-  text-align: center;
+    text-align: left;
 }
 
 .App-logo {
@@ -8,10 +20,10 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
+    background-color: #073854;
   padding: 20px;
   color: white;
+    text-align: center;
 }
 
 .App-title {
@@ -20,6 +32,7 @@
 
 .App-intro {
   font-size: large;
+    text-align: center;
 }
 
 @keyframes App-logo-spin {
