@@ -1,4 +1,4 @@
-import {ADD_TO_CART, CHECKOUT_REQUEST,} from '../constants/ActionTypes'
+import {ADD_TO_CART, CHECKOUT_REQUEST,} from '../actions'
 
 const initialState = {
     addedIds: [],
