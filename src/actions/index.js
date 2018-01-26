@@ -3,10 +3,12 @@ import _products from '../data/products.json'
 /**
  * Simula el procesamiento cliente/servidor
  */
-const ADD_TO_CART = 'ADD_TO_CART'
-const CHECKOUT_REQUEST = 'CHECKOUT_REQUEST'
-const CHECKOUT_SUCCESS = 'CHECKOUT_SUCCESS'
-const GET_PRODUCTS = 'GET_PRODUCTS'
+const types = {
+    ADD_TO_CART: 'ADD_TO_CART',
+    CHECKOUT_REQUEST: 'CHECKOUT_REQUEST',
+    CHECKOUT_SUCCESS: 'CHECKOUT_SUCCESS',
+    GET_PRODUCTS: 'GET_PRODUCTS'
+}
 
 const TIMEOUT = 100
 
