@@ -1,8 +1,44 @@
 import React, {Component} from 'react';
+import {Col, Container, Row} from 'reactstrap';
 import './App.css';
+import Header from "./components/Header";
+import Menu from "./components/Menu";
+import ProductsContainer from './containers/ProductsContainer'
+import CartContainer from './containers/CartContainer'
+import categories from './data/categories.json';
 
 class App extends Component {
-    renderCategories(category) {
+    render() {
+        let menu = {
+            id: 0,
+            name: 'Categorias:',
+            sublevels: categories
+        };
+
+        return (
+            <div>
+                <Header/>
+                <Container>
+                    <Row>
+                        <Col xs={12} md={4}>
+                            <Menu category={menu}/>
+                        </Col>
+                        <Col xs={12} md={4}>
+                            <ProductsContainer/>
+                        </Col>
+                        <Col xs={12} md={4}>
+                            <CartContainer/>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+        );
+    }
+}
+
+export default App;
+/**
+ renderCategories(category) {
         if (category.sublevels) {
             return (
                 <div>
@@ -18,7 +54,7 @@ class App extends Component {
         }
     };
 
-  render() {
+ render() {
     return (
       <div className="App">
         <header className="App-header">
@@ -31,6 +67,5 @@ class App extends Component {
       </div>
     );
   }
-}
-
-export default App;
+ }
+ **/
