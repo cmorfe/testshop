@@ -64,3 +64,11 @@ li > p {
     background-color: #0062cc;
     border-color: #005cbf;
 }
+
+.btn {
+    padding: 0 6px;
+}
+
+table {
+    text-align: center;
+}

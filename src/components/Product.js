@@ -2,9 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Product = ({price, quantity, name}) => (
-    <div>
-        {name.toUpperCase()} - {price}{quantity ? ` x ${quantity}` : null}
-    </div>
+    <tr>
+        <td>
+            {name.toUpperCase()}
+        </td>
+        <td>
+            {quantity ? quantity : null}
+        </td>
+        <td>
+            {price}
+        </td>
+    </tr>
 )
 
 Product.propTypes = {

@@ -9,10 +9,7 @@ export default class Menu extends Component {
     }
 
     toggle() {
-        this.setState({
-            collapse: !this.state.collapse,
-
-        });
+        this.setState({collapse: !this.state.collapse});
     }
 
     render() {

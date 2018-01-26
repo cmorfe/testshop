@@ -5,15 +5,28 @@ import {addToCart} from '../actions'
 import {getVisibleProducts} from '../reducers/products'
 import ProductItem from '../components/ProductItem'
 import ProductsList from '../components/ProductsList'
+import {Table} from "reactstrap";
 
 const ProductsContainer = ({products, addToCart}) => (
     <ProductsList name="Productos">
-        {products.map(product =>
-            <ProductItem
-                key={product.id}
-                product={product}
-                onAddToCartClicked={() => addToCart(product.id)}/>
-        )}
+        <Table size='sm' striped hover responsive>
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Añadir</th>
+            </tr>
+            </thead>
+            <tbody>
+            {products.map(product =>
+                <ProductItem
+                    key={product.id}
+                    product={product}
+                    onAddToCartClicked={() => addToCart(product.id)}/>
+            )}
+            </tbody>
+        </Table>
     </ProductsList>
 )
 
