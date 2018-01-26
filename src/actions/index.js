@@ -1,15 +1,13 @@
 import _products from '../data/products.json'
 
+export const ADD_TO_CART = 'ADD_TO_CART'
+export const CHECKOUT_REQUEST = 'CHECKOUT_REQUEST'
+export const CHECKOUT_SUCCESS = 'CHECKOUT_SUCCESS'
+export const GET_PRODUCTS = 'GET_PRODUCTS'
+
 /**
  * Simula el procesamiento cliente/servidor
  */
-const types = {
-    ADD_TO_CART: 'ADD_TO_CART',
-    CHECKOUT_REQUEST: 'CHECKOUT_REQUEST',
-    CHECKOUT_SUCCESS: 'CHECKOUT_SUCCESS',
-    GET_PRODUCTS: 'GET_PRODUCTS'
-}
-
 const TIMEOUT = 100
 
 const shop = {
@@ -18,7 +16,7 @@ const shop = {
 }
 
 const getProducts = products => ({
-    type: types.GET_PRODUCTS,
+    type: GET_PRODUCTS,
     products
 })
 
@@ -29,7 +27,7 @@ export const getAllProducts = () => dispatch => {
 }
 
 const addToCartUnsafe = productId => ({
-    type: types.ADD_TO_CART,
+    type: ADD_TO_CART,
     productId
 })
 
@@ -43,11 +41,11 @@ export const checkout = products => (dispatch, getState) => {
     const {cart} = getState()
 
     dispatch({
-        type: types.CHECKOUT_REQUEST
+        type: CHECKOUT_REQUEST
     })
     shop.buyProducts(products, () => {
         dispatch({
-            type: types.CHECKOUT_SUCCESS,
+            type: CHECKOUT_SUCCESS,
             cart
         })
     })
